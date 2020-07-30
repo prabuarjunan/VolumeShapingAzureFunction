@@ -1,6 +1,6 @@
 import datetime
 import logging
-import volumeShapingsizing 
+from . import volumeShapingsizing 
 import azure.functions as func
 
 def main(mytimer: func.TimerRequest) -> None:
