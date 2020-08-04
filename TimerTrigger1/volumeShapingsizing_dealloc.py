@@ -73,7 +73,7 @@ def update_volume():
         'cache-control': "no-cache",
         'Postman-Token': "bf720790-dc80-4f34-a64e-d70d042857c1"
     }
-    payload1 = "{\n  \"location\": \"westus2\",\n  \"properties\": {\n    \"creationToken\": \"testVol\",\n    \"serviceLevel\": \"Standard\",\n    \"subnetId\": \"/subscriptions/5ad8e8ac-cdb7-40bf-a1c1-ff707c86c9ea/resourceGroups/westus2.rg/providers/Microsoft.Network/virtualNetworks/westus2-01.vnet/subnets/ANF.sn\",\n    \"usageThreshold\": 1073741824000\n  }\n}"
+    payload1 = "{\n  \"location\": \"westus2\",\n  \"properties\": {\n    \"creationToken\": \"testVol\",\n    \"serviceLevel\": \"Standard\",\n    \"subnetId\": \"/subscriptions/5ad8e8ac-cdb7-40bf-a1c1-ff707c86c9ea/resourceGroups/westus2.rg/providers/Microsoft.Network/virtualNetworks/westus2-01.vnet/subnets/ANF.sn\",\n    \"usageThreshold\": 107374182400\n  }\n}"
     updateResult = requests.put(url=AzureUpdateVolURL, data=payload1, headers=HEADERS, params=querystring)
     print("The response code : ", updateResult.status_code, updateResult.text)
     data1 = updateResult.json()
