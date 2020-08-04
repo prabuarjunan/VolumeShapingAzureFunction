@@ -6,7 +6,7 @@ import azure.functions as func
 def main(mytimer1: func.TimerRequest) -> None:
     utc_timestamp = datetime.datetime.utcnow().replace(
         tzinfo=datetime.timezone.utc).isoformat()
-    volumeShapingsizing.update_volume()
+    volumeShapingsizing_dealloc.update_volume()
     if mytimer1.past_due:
         logging.info('The timer is past due!')
 
