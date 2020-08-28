@@ -1,6 +1,6 @@
 # VolumeShapingAzureFunction
     The Azure Functions trigger volume shaping using the REST API. The defined time trigger triggers the azure function to optimize 
-    the performance for the required peak workload and change the service level of the volume. The pre-defined Azure functions calls 
+    the performance for the required peak workload and change the service level of the capacity pool. The pre-defined Azure functions calls 
     the REST API to update the volume with the differnt service level and required allocated capacity change the allocated capacity 
     of the Azure NetApp files using time triggered azure function
     This project has the following files:
