@@ -17,7 +17,7 @@ headers1 = {
     }
 
 #Payload for the get token
-payload = "grant_type=client_credentials&client_id=f95d8cff-b66e-4e06-ab49-bd23a32949da&client_secret=vaqsU67COnhAq4izL0BfxsEfhZD-KWXTQ6&resource=https%3A%2F%2Fmanagement.azure.com%2F&undefined="
+payload = "grant_type=client_credentials&client_id=EnterYourClentIDHere&client_secret=EnterYourSecretHere&resource=https%3A%2F%2Fmanagement.azure.com%2F&undefined="
 
     # get the bearer token
 def get_token():
@@ -37,7 +37,6 @@ def list_Volumes():
         'Authorization': bearertoken,
         'Content-Type': "application/json",
         'cache-control': "no-cache",
-        'Postman-Token': "ca0445d4-e16d-4232-ac34-511c3202a3ea"
     }
     getResult = requests.get(url=AzureVolumeBaseURL, headers=HEADERS, params=querystring)
     print("The response code : ", getResult.status_code, getResult.text)
@@ -54,7 +53,6 @@ def get_Volume():
         'Authorization': bearertoken,
         'Content-Type': "application/json",
         'cache-control': "no-cache",
-        'Postman-Token': "b670b2a9-7caf-4b9d-8c6f-04b9d37c7e7b"
     }
     getResult = requests.get(url=AzureGetSpecificVolURL, headers=HEADERS, params=querystring)
     print("The response code : ", getResult.status_code, getResult.text)
@@ -71,12 +69,9 @@ def update_volume():
         'Authorization': bearertoken,
         'Content-Type': "application/json",
         'cache-control': "no-cache",
-        'Postman-Token': "bf720790-dc80-4f34-a64e-d70d042857c1"
     }
     payload1 = "{\n  \"location\": \"westus2\",\n  \"properties\": {\n    \"creationToken\": \"testVol\",\n    \"serviceLevel\": \"Standard\",\n    \"subnetId\": \"/subscriptions/5ad8e8ac-cdb7-40bf-a1c1-ff707c86c9ea/resourceGroups/westus2.rg/providers/Microsoft.Network/virtualNetworks/westus2-01.vnet/subnets/ANF.sn\",\n    \"usageThreshold\": 1073741824000\n  }\n}"
     updateResult = requests.put(url=AzureUpdateVolURL, data=payload1, headers=HEADERS, params=querystring)
     print("The response code : ", updateResult.status_code, updateResult.text)
     data1 = updateResult.json()
     print(data1)
-
-

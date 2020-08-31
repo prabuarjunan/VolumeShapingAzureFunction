@@ -18,7 +18,7 @@ headers1 = {
     }
 
 #Payload for the get token
-payload = "grant_type=client_credentials&client_id=f95d8cff-b66e-4e06-ab49-bd23a32949da&client_secret=vaqsU67COnhAq4izL0BfxsEfhZD-KWXTQ6&resource=https%3A%2F%2Fmanagement.azure.com%2F&undefined="
+payload = "grant_type=client_credentials&client_id=EnterYourClentIDHere&client_secret=EnterYourSecretHere&resource=https%3A%2F%2Fmanagement.azure.com%2F&undefined="
 
     # get the bearer token
 def get_token():
@@ -38,7 +38,6 @@ def list_Volumes():
         'Authorization': bearertoken,
         'Content-Type': "application/json",
         'cache-control': "no-cache",
-        'Postman-Token': "ca0445d4-e16d-4232-ac34-511c3202a3ea"
     }
     getResult = requests.get(url=AzureVolumeBaseURL, headers=HEADERS, params=querystring)
     print("The response code : ", getResult.status_code, getResult.text)
@@ -55,7 +54,6 @@ def get_Volume():
         'Authorization': bearertoken,
         'Content-Type': "application/json",
         'cache-control': "no-cache",
-        'Postman-Token': "b670b2a9-7caf-4b9d-8c6f-04b9d37c7e7b"
     }
     getResult = requests.get(url=AzureGetSpecificVolURL, headers=HEADERS, params=querystring)
     print("The response code : ", getResult.status_code, getResult.text)
@@ -89,12 +87,9 @@ def update_CapacityPool():
         'Authorization': bearertoken,
         'Content-Type': "application/json",
         'cache-control': "no-cache",
-        'Postman-Token': "bf720790-dc80-4f34-a64e-d70d042857c1"
     }
     payload2 = "{\n  \"location\": \"westus2\",\n  \"properties\": {\n    \"size\": 4398046511104,\n    \"serviceLevel\": \"Premium\"\n  }\n}"
     updateCapacityPool = requests.put(url=AzureUpdateCapacityPool, data=payload2, headers=HEADERS, params=querystring)
     print("The response code : ", updateCapacityPool.status_code, updateCapacityPool.text)
     data2 = updateCapacityPool.json()
     print(data2)
-
-
