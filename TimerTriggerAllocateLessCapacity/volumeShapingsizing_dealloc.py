@@ -13,7 +13,6 @@ AzureUpdateVolURL = "https://management.azure.com/subscriptions/5ad8e8ac-cdb7-40
 # header for the post function
 headers1 = {
         'cache-control': "no-cache",
-        'Postman-Token': "7c68ee24-5b92-4e60-92f4-8c0c506c3413"
     }
 
 #Payload for the get token
